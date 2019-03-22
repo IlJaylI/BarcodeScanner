@@ -28,7 +28,7 @@ namespace BarcodeScanner.Classes
         public async Task Save(ToUpload data, bool isnew = true)
         {
             //changes need to be made when the method is implemneted    
-            String Url = "http://scan2xonline.westeurope.cloudapp.azure.com/external/scanconnection.aspx/EndPoint";
+            String Url = "";
             var uri = new Uri(string.Format(Url, string.Empty));
 
             try

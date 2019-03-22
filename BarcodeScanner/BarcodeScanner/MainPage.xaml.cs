@@ -19,6 +19,8 @@ namespace BarcodeScanner
 
         private async void TakePicture(object sender,EventArgs e)
         {
+            //Check internet connection
+
             Classes.ToUpload Data = new Classes.ToUpload();
             
             //needs proper conversion checks 
@@ -27,6 +29,7 @@ namespace BarcodeScanner
 
             Data.Client = Client.Text;
             Data.Batch = Batch.Text;
+            //add date to object?
             Debug.WriteLine("Batch: " + Data.Batch + "Client: " + Data.Client);
 
             for (int i=0; i < imgAmount; i++)
@@ -54,12 +57,15 @@ namespace BarcodeScanner
                 Debug.WriteLine("Array size: "+ImageArray.Length);
             }
 
-            //Check internet connection
+            Data.Images = ImageArray;
 
-            //add date to object?
+            //Server Side implmentation needed
+            var BC = BindingContext;
 
-            //Preview
-            //Image1.Source = ImageSource.FromStream(() => file.GetStream());
+            Classes.UploadManager UpManage = new Classes.UploadManager();
+            await UpManage.SaveTask(Data, false);
+
+
         }
 
     }

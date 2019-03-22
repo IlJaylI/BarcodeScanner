@@ -13,12 +13,10 @@ namespace BarcodeScanner.Classes
 
         //posisible cache overload
         public Stream Image { get; set; } 
-        public Byte[] Images { get; set; }
+        public Stream[] Images { get; set; }
 
 
         public ToUpload() { }
-
-
     }
 
     public class JsonResponse
