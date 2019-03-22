@@ -10,7 +10,7 @@
 
         <Entry Placeholder="Client" x:Name="Client"/>
 
-        <!--<Entry Placeholder="Photo Amount" x:Name="Amount"/>-->
+        <Entry Placeholder="Photo Amount" x:Name="Amount"/>
         
         <Button Text="Start Job" x:Name="Start" Clicked="TakePicture"/>
             
